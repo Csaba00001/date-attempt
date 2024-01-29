@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: black;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .heart {
+      animation: pulse 2s infinite;
+      display: inline-block;
+      font-size: 50px;
+      color: red;
+      cursor: pointer;
+    }
+
+    #displayText {
+      display: none;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="heart" onclick="toggleText()">&#x2764;&#xfe0f;</div>
+  <div id="displayText">2024 Január 30 suli után?</div>
+
+  <script>
+    let textVisible = false;
+
+    function toggleText() {
+      const displayText = document.getElementById('displayText');
+
+      textVisible = !textVisible;
+
+      if (textVisible) {
+        displayText.style.display = 'block';
+      } else {
+        displayText.style.display = 'none';
+      }
+    }
+  </script>
+</body>
